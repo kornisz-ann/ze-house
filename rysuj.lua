@@ -5,7 +5,15 @@ local rgb = require("rgbColorChanger")
 -- ale... po co. :]
 -- po prostu w przyszłości się przyda.
 
-function rysuj.swiat()
+local function promienie1()
+    love.graphics.print("Promienie 1")
+end
+
+local function promienie2()
+    love.graphics.print("Promienie 2")
+end
+
+function rysuj.swiat(stanSwiata)
     -- niebo
     love.graphics.setColor(rgb(153, 204, 255), 1)
     love.graphics.rectangle(
@@ -27,6 +35,16 @@ function rysuj.swiat()
         "fill",
         0, 0, 100
     )
+    
+    love.graphics.setColor(1,1,1,1)
+    if stanSwiata == 1 then
+        promienie1()
+    elseif stanSwiata == 2 then
+        promienie2()
+    else
+        promienie2()
+    end
+
 end
 
 local function drzwiOtwarte()

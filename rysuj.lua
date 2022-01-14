@@ -34,9 +34,15 @@ local function drzwiOtwarte()
     love.graphics.polygon(
         "fill",
         {450, 450,
-        550,450,
-        450, 600,
-        550, 600,}
+        550, 450,
+        550, 600,
+        450, 600,}
+    )
+
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.circle(
+        "fill",
+        530,530,3
     )
 end
 

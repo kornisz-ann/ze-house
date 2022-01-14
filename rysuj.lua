@@ -1,8 +1,13 @@
 local rysuj = {}
 
+local rgb = require("rgbColorChanger")
+-- mozna zmienic wszystkie definicje kolorow by uzywaly tej funkcji
+-- ale... po co. :]
+-- po prostu w przyszłości się przyda.
+
 function rysuj.swiat()
     -- niebo
-    love.graphics.setColor(153/255, 204/255, 1, 1)
+    love.graphics.setColor(rgb(153, 204, 255), 1)
     love.graphics.rectangle(
         "fill",
         0, 0,

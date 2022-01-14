@@ -1,23 +1,21 @@
-rysuj = require("rysuj")
-
-local drzwiOtwarte = false
-local dt
+local rysuj
+local drzwiOtwarte
 
 function love.load()
-
+    rysuj = require("rysuj")
+    drzwiOtwarte = false
 end
 
-function love.update(deltaTime)
+function love.update(deltaTime) -- deltaTime - czas pomiędzy klatkami
     if love.keyboard.isDown("o") then
         drzwiOtwarte = true
     else
         drzwiOtwarte = false
     end
-    dt = deltaTime
 end
 
 function love.draw()
     rysuj.swiat()
     rysuj.dom(drzwiOtwarte)
-    love.graphics.print(dt)
+    love.graphics.print("hejas")
 end

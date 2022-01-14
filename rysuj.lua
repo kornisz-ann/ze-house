@@ -14,7 +14,7 @@ function rysuj.swiat()
         800, 475
     )    
     -- trawa
-    love.graphics.setColor(51/255, 153/255, 51/255)
+    love.graphics.setColor(rgb(51, 153, 51), 1)
     love.graphics.rectangle(
         "fill",
         0, 475,
@@ -71,6 +71,15 @@ function rysuj.dom(czyOtwarte)
         "fill",
         200, 275,
         400, 325
+    )
+    
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.polygon(
+        "fill",
+        {350, 450,
+        450, 450,
+        450, 600,
+        350, 600,}
     )
 
     -- dach

@@ -93,6 +93,35 @@ local function rysuj_dom()
     )
 end
 
+local function otwarteDrzwi()
+    love.graphics.setColor(153/255, 102/255, 51/255, 1)
+    love.graphics.polygon(
+        "fill",
+        {450, 450,
+        550,450,
+        450, 600,
+        550, 600,}
+    )
+end
+
+local function zamknieteDrzwi()
+    love.graphics.setColor(153/255, 102/255, 51/255, 1)
+    love.graphics.polygon(
+        "fill",
+        {350, 450,
+        450, 450,
+        450, 600,
+        350, 600,}
+    )
+
+    -- klamka
+    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.circle(
+        "fill",
+        370, 530, 3
+    )
+end
+
 local otwarte = false
 
 function love.load()

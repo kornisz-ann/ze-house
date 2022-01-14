@@ -1,13 +1,11 @@
-local function domek1()
-    
+local function rysuj_swiat()    
     -- niebo
     love.graphics.setColor(153/255, 204/255, 1, 1)
     love.graphics.rectangle(
         "fill",
         0, 0,
         800, 475
-    )
-
+    )    
     -- trawa
     love.graphics.setColor(51/255, 153/255, 51/255)
     love.graphics.rectangle(
@@ -15,6 +13,16 @@ local function domek1()
         0, 475,
         800, 125
     )
+
+    -- słońce
+    love.graphics.setColor(1, 204/255, 102/255)
+    love.graphics.circle(
+        "fill",
+        0, 0, 100
+    )
+end
+
+local function rysuj_dom()
     -- podstawa domu
     love.graphics.setColor(1, 1, 153/255, 1)
     love.graphics.rectangle(
@@ -83,13 +91,6 @@ local function domek1()
         450, 373,
         100, 4
     )
-
-    -- słońce
-    love.graphics.setColor(1, 204/255, 102/255)
-    love.graphics.circle(
-        "fill",
-        0, 0, 100
-    )
 end
 
 local otwarte = false
@@ -107,11 +108,8 @@ function love.update()
 end
 
 function love.draw()
-    if otwarte then
-        domek2()
-    else
-        domek1()
-    end
+    rysuj_swiat()
+    rysuj_dom()
 
     -- love.graphics.setColor(153/255, 102/255, 51/255)
     -- love.graphics.polygon(

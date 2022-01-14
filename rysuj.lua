@@ -1,4 +1,5 @@
 local rysuj = {}
+local stanSwiata
 
 local rgb = require("rgbColorChanger")
 -- mozna zmienic wszystkie definicje kolorow by uzywaly tej funkcji
@@ -6,7 +7,13 @@ local rgb = require("rgbColorChanger")
 -- po prostu w przyszłości się przyda.
 
 local function promienie1()
-    
+    love.graphics.setColor(rgb(255, 204, 102), 1)
+    love.graphics.line(110,2, 210,2)
+end
+
+local function promienie2()
+    love.graphics.setColor(rgb(255, 255, 153), 1)
+    love.graphics.line(110, 3, 210,4)
 end
 
 function rysuj.swiat()
@@ -31,6 +38,12 @@ function rysuj.swiat()
         "fill",
         0, 0, 100
     )
+
+    if stanSwiata == 1 then
+        promienie1()
+    elseif stanSwiata == 2 then
+        promienie2()
+    end
 end
 
 local function drzwiOtwarte()

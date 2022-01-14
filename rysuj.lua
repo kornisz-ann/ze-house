@@ -5,6 +5,10 @@ local rgb = require("rgbColorChanger")
 -- ale... po co. :]
 -- po prostu w przyszłości się przyda.
 
+local function promienie1()
+    
+end
+
 function rysuj.swiat()
     -- niebo
     love.graphics.setColor(rgb(153, 204, 255), 1)

@@ -1,5 +1,6 @@
 local rysuj
 local drzwiOtwarte
+local stanSwiata
 
 function love.load()
     rysuj = require("rysuj")
@@ -17,5 +18,5 @@ end
 function love.draw()
     rysuj.swiat()
     rysuj.dom(drzwiOtwarte)
-    love.graphics.print("hejas")
+    love.graphics.print("moje promienie")
 end

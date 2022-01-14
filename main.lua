@@ -1,4 +1,4 @@
-local function rysuj_swiat()    
+local function rysujSwiat()    
     -- niebo
     love.graphics.setColor(153/255, 204/255, 1, 1)
     love.graphics.rectangle(
@@ -22,7 +22,7 @@ local function rysuj_swiat()
     )
 end
 
-local function otwarteDrzwi()
+local function rysujOtwarte()
     love.graphics.setColor(153/255, 102/255, 51/255, 1)
     love.graphics.polygon(
         "fill",
@@ -33,7 +33,7 @@ local function otwarteDrzwi()
     )
 end
 
-local function zamknieteDrzwi()
+local function rysujZamkniete()
     love.graphics.setColor(153/255, 102/255, 51/255, 1)
     love.graphics.polygon(
         "fill",
@@ -51,7 +51,7 @@ local function zamknieteDrzwi()
     )
 end
 
-local function rysuj_dom(drzwi_otwarte)
+local function rysujDom(drzwi_otwarte)
     -- podstawa domu
     love.graphics.setColor(1, 1, 153/255, 1)
     love.graphics.rectangle(
@@ -70,9 +70,9 @@ local function rysuj_dom(drzwi_otwarte)
     )
 
     if drzwi_otwarte then
-        otwarteDrzwi()
+        rysujOtwarte()
     else
-        zamknieteDrzwi()
+        rysujZamkniete()
     end
 
     -- -- drzwi
@@ -128,7 +128,7 @@ local function rysuj_dom(drzwi_otwarte)
     )
 end
 
-local otwarte = false
+local drzwiOtwarte = false
 
 function love.load()
 
@@ -136,15 +136,15 @@ end
 
 function love.update()
     if love.keyboard.isDown("o") then
-        otwarte = true
+        drzwiOtwarte = true
     else
-        otwarte = false
+        drzwiOtwarte = false
     end
 end
 
 function love.draw()
-    rysuj_swiat()
-    rysuj_dom(otwarte)
+    rysujSwiat()
+    rysujDom(drzwiOtwarte)
 
     -- love.graphics.setColor(153/255, 102/255, 51/255)
     -- love.graphics.polygon(
